@@ -1,16 +1,19 @@
+
 import type { NextConfig } from 'next';
-import { getSupabasePublicEnv } from './src/lib/env';
 
 const isDev = process.env.NODE_ENV !== 'production';
-const supabaseOrigin = getSupabasePublicEnv()?.url ?? null;
 
-/**
- * Content-Security-Policy. Next.js injects inline bootstrap scripts, so script-src
- * needs 'unsafe-inline' until a nonce-based policy is added (tracked as a later
- * hardening step); everything else is locked to this origin plus the configured
- * Supabase project (API + signed avatar URLs). Dev adds 'unsafe-eval' for React
- * refresh only.
- */
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
+let supabaseOrigin: string | null = null;
+
+if (supabaseUrl) {
+  try {
+    supabaseOrigin = new URL(supabaseUrl).origin;
+  } catch {
+    supabaseOrigin = null;
+  }
+}
+
 const csp = [
   "default-src 'self'",
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ''}`,
@@ -34,14 +37,18 @@ const securityHeaders = [
     key: 'Permissions-Policy',
     value: 'camera=(), microphone=(), geolocation=(), payment=()',
   },
-  { key: 'Strict-Transport-Security', value: 'max-age=63072000; includeSubDomains' },
+  {
+    key: 'Strict-Transport-Security',
+    value: 'max-age=63072000; includeSubDomains',
+  },
 ];
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
-  // Avatar uploads go through a Server Action; the default 1 MB body limit is below our 2 MB image cap.
-  experimental: { serverActions: { bodySizeLimit: '3mb' } },
+  experimental: {
+    serverActions: { bodySizeLimit: '3mb' },
+  },
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }];
   },
