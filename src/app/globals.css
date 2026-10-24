@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+  /* Visible keyboard focus everywhere: 3px ink outline with a white halo so it reads on blue and white. */
+  :focus-visible {
+    outline: 3px solid theme('colors.ink');
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px #ffffff;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Presentation polish: ONBOARD home dashboard */
+.home-page { color: #102544; }
+.home-eyebrow { color: #126bd1; font-size: .68rem; font-weight: 800; letter-spacing: .14em; }
+.home-hero { box-shadow: 0 24px 70px -35px rgba(16,37,68,.55); }
+.hero-orb { position: absolute; z-index: 0; border-radius: 999px; pointer-events: none; }
+.hero-orb-one { width: 440px; height: 440px; right: -100px; top: -240px; border: 1px solid rgba(255,255,255,.15); box-shadow: 0 0 0 32px rgba(255,255,255,.025), 0 0 0 72px rgba(255,255,255,.02); }
+.hero-orb-two { width: 250px; height: 250px; left: 38%; bottom: -210px; background: rgba(35,145,255,.16); filter: blur(4px); }
+.hero-float-card { position: relative; z-index: 2; width: min(100%, 330px); border: 1px solid rgba(255,255,255,.72); border-radius: 20px; background: rgba(255,255,255,.97); padding: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.2); }
+.hero-float-card-top { margin-left: auto; margin-bottom: -12px; }
+.hero-float-card-bottom { margin-top: -12px; }
+.hero-illustration { position: relative; display: grid; min-height: 240px; place-items: center; overflow: hidden; }
+.hero-illustration-ring { position: absolute; width: 230px; height: 230px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; box-shadow: 0 0 0 24px rgba(255,255,255,.045), 0 0 0 50px rgba(255,255,255,.03); }
+.hero-illustration-mark { display: grid; width: 145px; height: 145px; place-items: center; border: 2px solid rgba(255,255,255,.8); border-radius: 44px; background: linear-gradient(145deg,#2391ff,#126bd1); color: white; font-family: var(--font-display); font-size: 94px; font-weight: 800; line-height: 1; transform: rotate(-8deg); box-shadow: 0 25px 45px rgba(0,0,0,.25), inset 0 0 0 8px rgba(255,255,255,.08); }
+.hero-spark { position: absolute; z-index: 1; color: #fff83f; font-size: 30px; }
+.hero-spark-a { top: 22px; right: 22%; }
+.hero-spark-b { bottom: 18px; left: 18%; color: #ffcd54; font-size: 25px; }
+.hero-pill { position: absolute; border-radius: 999px; padding: 7px 12px; font-size: 9px; font-weight: 900; letter-spacing: .12em; box-shadow: 0 8px 20px rgba(0,0,0,.15); }
+.hero-pill-blue { right: 3%; top: 50%; background: #2391ff; color: white; transform: rotate(8deg); }
+.hero-pill-yellow { left: 4%; top: 44%; background: #fff83f; color: #102544; transform: rotate(-8deg); }
+.shortcut-icon { display: grid; width: 48px; height: 48px; flex: 0 0 48px; place-items: center; border-radius: 16px; }
+.shortcut-blue { background: #e6f2ff; color: #126bd1; }
+.shortcut-yellow { background: #fff9c7; color: #665800; }
+.shortcut-pink { background: #fff0f6; color: #c60050; }
+.shortcut-amber { background: #fff1db; color: #8d5700; }
+.product-artwork { position: relative; overflow: hidden; }
+.product-artwork::after { position: absolute; right: -20px; bottom: -40px; width: 120px; height: 120px; border: 1px solid rgba(16,37,68,.08); border-radius: 50%; box-shadow: 0 0 0 18px rgba(255,255,255,.18), 0 0 0 38px rgba(255,255,255,.15); content: ''; }
+.product-emoji { z-index: 1; font-size: 3.5rem; filter: drop-shadow(0 8px 8px rgba(16,37,68,.13)); transition: transform .25s ease; }
+.home-product-card:hover .product-emoji { transform: translateY(-4px) rotate(-4deg) scale(1.06); }
+.feature-check { display: grid; width: 26px; height: 26px; flex: 0 0 26px; place-items: center; border-radius: 9px; background: #e6f2ff; color: #126bd1; font-size: 13px; font-weight: 900; }
+.feature-check-pink { background: #fff0f6; color: #c60050; }
+.feature-check-amber { background: #fff1db; color: #8d5700; }
+@media (max-width: 640px) {
+  .hero-illustration { min-height: 200px; }
+  .hero-illustration-ring { width: 180px; height: 180px; }
+  .hero-illustration-mark { width: 112px; height: 112px; border-radius: 34px; font-size: 72px; }
+  .hero-float-card { padding: 12px; }
+  .hero-float-card-top { margin-bottom: -6px; }
+  .hero-float-card-bottom { margin-top: -6px; }
+}

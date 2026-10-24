@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 40" role="img" aria-labelledby="t"><title id="t">ONBOARD</title>
+  <svg x="0" y="0" width="40" height="40" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="18" fill="#2391FF"/>
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  <circle cx="32" cy="32" r="3.5" fill="#FFFFFF"/>
+  <circle cx="32" cy="18" r="6" fill="#FFF83F" stroke="#2391FF" stroke-width="2.5"/>
+  <circle cx="44.1" cy="39" r="6" fill="#F70063" stroke="#2391FF" stroke-width="2.5"/>
+  <circle cx="19.9" cy="39" r="6" fill="#FFCD54" stroke="#2391FF" stroke-width="2.5"/>
+  <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="17.25" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1.5"/>
+  </svg>
+  <g transform="translate(54 0)">
+  <g fill="none" stroke="#FFFFFF" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="8" cy="20" rx="8" ry="10"/>
+    <path d="M25 30V10L41 30V10"/>
+    <path d="M50 10V30M50 10H58A5 5 0 0 1 58 20H50M50 20H59A5 5 0 0 1 59 30H50"/>
+    <ellipse cx="80" cy="20" rx="8" ry="10"/>
+    <path d="M94 30L102 10L110 30M97 23H107"/>
+    <path d="M119 30V10H127A5 5 0 0 1 127 20H119M126 20L133 30"/>
+    <path d="M142 10V30H149A9 10 0 0 0 149 10Z"/>
+  </g>
+  </g>
+</svg>

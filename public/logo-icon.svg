@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="t"><title id="t">ONBOARD</title>
+  <rect width="64" height="64" rx="18" fill="#2391FF"/>
+  <circle cx="32" cy="32" r="14" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  <circle cx="32" cy="32" r="3.5" fill="#FFFFFF"/>
+  <circle cx="32" cy="18" r="6" fill="#FFF83F" stroke="#2391FF" stroke-width="2.5"/>
+  <circle cx="44.1" cy="39" r="6" fill="#F70063" stroke="#2391FF" stroke-width="2.5"/>
+  <circle cx="19.9" cy="39" r="6" fill="#FFCD54" stroke="#2391FF" stroke-width="2.5"/>
+</svg>
